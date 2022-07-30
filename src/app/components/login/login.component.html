@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md">
+        <button type="button" class="btn btn-secondary btn-lg w-100" (click)="open(demoModal)"
+            *ngIf="!(currentUserWallet$ | async)">Connect Wallet</button>
+        <button class="btn btn-secondary btn-secondary button-connected btn-lg w-100" *ngIf="currentUserWallet$ | async">
+            {{ currentUserWallet$ | async | slice:0:5 }}...{{ currentUserWallet$ | async | slice:37:42 }}</button>
+    </div>
+</div>
+
+
+<ng-template #demoModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Select Wallet</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="col d-flex justify-content-center">
+            <button type="button" class="w-75 btn btn-outline-secondary btn-lg"
+                (click)="onMetamaskConnectListener()">Metamask Extension
+
+                <img class="px-3" src="/assets/img/metamask-small.png">
+            </button>
+        </div>
+
+    </div>
+</ng-template>
