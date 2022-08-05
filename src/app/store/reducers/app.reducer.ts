@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store"
-import { closeTransactionErrorAlert, closeTransactionSuccessAlert, sendSetTextTransaction, sendSetNumberTransaction, updateUserWallet, userWalletDisconnect, transactionSetTextSuccess, transactionSetNumberSuccess, transactionSendError, updateActualNumber, updateActualText } from "../actions/app.action"
+import { closeTransactionErrorAlert, closeTransactionSuccessAlert, sendSetTextTransaction, updateUserWallet, userWalletDisconnect, transactionSetTextSuccess, transactionSendError, updateActualText } from "../actions/app.action"
 
 export const appInfoReducerFeatureKey = 'appInfoState';
 

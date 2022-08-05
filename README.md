@@ -33,3 +33,7 @@ You can find the smart contract configuration inside  `src/environments/environm
 
 The contract ABI is `src/artifacts/contracts/NameContract.sol/NameContract.sol.json` file.
 
+
+    "@alch/alchemy-web3": "^1.4.2",
+
+

@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { env } from 'process';
-import { Observable, mergeMap, of } from 'rxjs';
+import { Observable} from 'rxjs';
 import { WalletService } from 'src/app/services/wallet.service';
-import { closeTransactionErrorAlert, closeTransactionSuccessAlert, sendGetTextTransaction, sendGetNumberTransaction, sendSetTextTransaction, sendSetNumberTransaction } from 'src/app/store/actions/app.action';
+import { closeTransactionErrorAlert, closeTransactionSuccessAlert, sendGetTextTransaction, sendSetTextTransaction} from 'src/app/store/actions/app.action';
 import { AppInfoState } from 'src/app/store/reducers/app.reducer';
 import { getTransactionMessage, getIsTransactionError, getIsTransactionSuccess, getUserWalletAddress, getActualText } from 'src/app/store/selectors/app.selectors';
 import { environment } from 'src/environments/environment';

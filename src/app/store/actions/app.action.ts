@@ -17,23 +17,6 @@ export const updateUserWallet = createAction(
     props<{ wallet: string }>()
 )
 
-
-
-export const sendSetNumberTransaction = createAction(
-    '[Metamask Info] - Send Transaction to store number',
-    props<{ numberToStore: number }>()
-
-)
-
-export const sendGetNumberTransaction = createAction(
-    '[Metamask Info] - Send Transaction to view the number stored in contract'
-)
-
-export const updateActualNumber = createAction(
-    '[App Info] - Update actual Number value of the Number contract',
-    props<{ number: number }>()
-)
-
 export const sendSetTextTransaction = createAction(
     '[Metamask Info] - Send Transaction to store text',
     props<{ textToStore: string }>()
@@ -51,11 +34,6 @@ export const updateActualText = createAction(
 
 export const transactionSetTextSuccess = createAction(
     '[Metamask Info] - Transaction Set Text sent successfully',
-    props<{ transactionMessage: string }>()
-)
-
-export const transactionSetNumberSuccess = createAction(
-    '[Metamask Info] - Transaction Set Number sent successfully',
     props<{ transactionMessage: string }>()
 )
 
