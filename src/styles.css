@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 .footer {
-    position: fixed;
+    position: relative;
     bottom: 0px;
     left: 0px;
     right: 0px;
     margin-bottom: 0px;
+}
+
+.footer-container{
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 120px;
 }
