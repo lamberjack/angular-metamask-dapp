@@ -2,16 +2,11 @@ import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import detectEthereumProvider from '@metamask/detect-provider';
 import { from, mergeMap, Observable, of } from 'rxjs';
-import { AbiItem, stringToHex } from 'web3-utils'
+import { AbiItem } from 'web3-utils'
 import Web3 from 'web3';
 import NAME_CONTRACT_ABI from 'src/artifacts/contracts/NameContract.sol/NameContract.sol.json'
 
 const NAME_CONTRACT_ADDRESS = environment.write_name_contract_address
-
-interface ProviderMessage {
-  type: string;
-  data: unknown;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +14,7 @@ interface ProviderMessage {
 export class WalletService {
 
   constructor() {
+    
    }
 
   getEthereumProvider(): Observable<any> {
