@@ -16,6 +16,7 @@ import { appInfoReducer } from './store/reducers/app.reducer';
 import { AppInfoEffects } from './store/effects/app.effects';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { NotAuthorizedComponent } from './components/not-authorized/not-authoriz
     HomeComponent,
     NavbarComponent,
     NotAuthorizedComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -38,3 +38,8 @@ export const getTransactionMessage = createSelector(
     getAppInfoState,
     (state: AppInfoState) => state.transactionMessage
 );
+
+export const isTransactionLoading = createSelector(
+    getAppInfoState,
+    (state: AppInfoState) => state.isLoading
+);

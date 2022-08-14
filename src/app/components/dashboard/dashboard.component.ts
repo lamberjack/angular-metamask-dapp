@@ -4,7 +4,7 @@ import { Observable} from 'rxjs';
 import { WalletService } from 'src/app/services/wallet.service';
 import { closeTransactionErrorAlert, closeTransactionSuccessAlert, sendGetTextTransaction, sendSetTextTransaction} from 'src/app/store/actions/app.action';
 import { AppInfoState } from 'src/app/store/reducers/app.reducer';
-import { getTransactionMessage, getIsTransactionError, getIsTransactionSuccess, getUserWalletAddress, getActualText } from 'src/app/store/selectors/app.selectors';
+import { getTransactionMessage, getIsTransactionError, getIsTransactionSuccess, getUserWalletAddress, getActualText, isTransactionLoading } from 'src/app/store/selectors/app.selectors';
 import { environment } from 'src/environments/environment';
 
 
@@ -19,6 +19,7 @@ const NAME_CONTRACT_ADDRESS = environment.write_name_contract_address
 })
 export class DashboardComponent implements OnInit {
 
+  isTransactionLoading$: Observable<boolean>;
   nameContractUrl: string
   currentUserWallet$: Observable<string>
   isTransactionSuccess$: Observable<boolean>
@@ -37,6 +38,7 @@ export class DashboardComponent implements OnInit {
     this.isTransactionError$ = this.store.pipe(select(getIsTransactionError))
     this.transactionMessage$ = this.store.pipe(select(getTransactionMessage))
     this.actualName$ = this.store.pipe(select(getActualText))
+    this.isTransactionLoading$ = this.store.pipe(select(isTransactionLoading))
   }
 
   ngOnInit(): void {

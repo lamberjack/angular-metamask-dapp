@@ -18,6 +18,9 @@ export interface AppInfoState {
     // Check if user wallet is connected
     isConnected: boolean;
 
+    // Check if a transaction is executing
+    isLoading: boolean;
+
     // Handle transaction success alert
     transactionSuccessAlertOpen: boolean
 
@@ -34,6 +37,7 @@ const initialState: AppInfoState = {
     textToStore: '',
     userWalletAddress: '',
     isConnected: false,
+    isLoading: false,
     transactionSuccessAlertOpen: false,
     transactionErrorAlertOpen: false,
     transactionMessage: ''
@@ -57,7 +61,8 @@ export const appInfoReducer = createReducer(
 
     on(sendSetTextTransaction, (state, action) => ({
         ...state,
-        textToStore: action.textToStore
+        textToStore: action.textToStore,
+        isLoading: true
     })),
 
     on(updateActualText, (state, action) => ({
@@ -69,7 +74,8 @@ export const appInfoReducer = createReducer(
         ...state,
         transactionSuccessAlertOpen: true,
         transactionErrorAlertOpen: false,
-        transactionMessage: action.transactionMessage
+        transactionMessage: action.transactionMessage,
+        isLoading: false
     })),
 
     on(closeTransactionSuccessAlert, (state, action) => ({
@@ -82,7 +88,8 @@ export const appInfoReducer = createReducer(
         ...state,
         transactionErrorAlertOpen: true,
         transactionSuccessAlertOpen: false,
-        transactionMessage: action.transactionMessage
+        transactionMessage: action.transactionMessage,
+        isLoading: false
     })),
 
     on(closeTransactionErrorAlert, (state, action) => ({
