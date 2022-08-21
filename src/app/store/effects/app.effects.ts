@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from "@ngrx/store";
-import { catchError, map, Observable, of, switchMap, tap, withLatestFrom } from "rxjs";
+import { catchError, map, of, switchMap, tap, withLatestFrom } from "rxjs";
 import { WalletService } from "src/app/services/wallet.service";
 import { retrieveUserWallet, updateUserWallet, userWalletDisconnect, userWalletDisconnected, sendSetTextTransaction, transactionSendError, sendGetTextTransaction, updateActualText, transactionSetTextSuccess } from "../actions/app.action";
 import { AppInfoState } from "../reducers/app.reducer";
