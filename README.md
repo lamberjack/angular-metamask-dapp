@@ -4,6 +4,14 @@ This project is an example of a Decentralized Application developed in Angular 1
 
 The main purpose of the project is to show how you can interact with a Smart Contract on Ethereum blockchain using Metamask browser wallet.
 
+To execute locally the application with the smart contract configuration on Sepolia testnet:
+
+```npm run start:dev```
+
+To build the application with the smart contract configuration on Sepolia testnet:
+
+```npm run build:dev```
+
 
 ## Metamask
 
@@ -18,9 +26,9 @@ The contract source code is avaiable on Git:
 
 - https://github.com/lamberjack/name-contract
 
-The smart contract used for this application is deployed on the testnet chain Ropsten:
+The smart contract used for this application is deployed on the testnet chain Sepolia:
 
-- https://ropsten.etherscan.io/address/0xa3bed649ca2ff980f3131bfaac99b56056755268
+- https://sepolia.etherscan.io/address/0x430a31391244b93e4E657b608c70C13529d05eba
 
 For smart contract compilation and deploy I used Remix web IDE:
  
@@ -29,11 +37,8 @@ For smart contract compilation and deploy I used Remix web IDE:
 
 ## Smart Contract - local configuration
 
-You can find the smart contract configuration inside  `src/environments/environment.ts` file.
+You can find the development smart contract configuration inside  `src/environments/environment.dev.ts` file.
 
 The contract ABI is `src/artifacts/contracts/NameContract.sol/NameContract.sol.json` file.
-
-
-    "@alch/alchemy-web3": "^1.4.2",
 
 

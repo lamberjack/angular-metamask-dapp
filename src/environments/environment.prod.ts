@@ -1,4 +1,4 @@
-// TODO contract address in production env has to be in a ETH mainnet and confifure properly
+// TODO contract address in production env has to be in a ETH mainnet
 
 export const environment = {
   production: true,

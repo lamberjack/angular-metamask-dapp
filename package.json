@@ -1,10 +1,12 @@
 {
   "name": "angular-metamask-dapp",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start:prod": "ng serve --configuration=production",
+    "start:dev": "ng serve --configuration=development",
+    "build:prod": "ng build --configuration=production",
+    "build:dev": "ng build --configuration=development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

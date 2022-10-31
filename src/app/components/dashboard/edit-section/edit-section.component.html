@@ -3,6 +3,7 @@
     <span class="input-group-text" id="basic-addon1">New Value</span>
     <input
       type="text"
+      [disabled]="(isTransactionLoading$ | async)!"
       [(ngModel)]="inputText"
       class="form-control input-number"
       placeholder="Insert a Text to store"
