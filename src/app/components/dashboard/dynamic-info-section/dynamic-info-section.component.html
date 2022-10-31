@@ -1,0 +1,17 @@
+<app-loader [isLoading]="(isTransactionLoading$ | async)!"> </app-loader>
+<ngb-alert
+  class="w-50 dynamic-message-alert-margins"
+  *ngIf="isTransactionSuccess$ | async"
+  type="success"
+  (closed)="closeSuccessAlert()"
+>
+  Transaction Success - {{ transactionMessage$ | async }}
+</ngb-alert>
+<ngb-alert
+  class="w-50 dynamic-message-alert-margins"
+  *ngIf="isTransactionError$ | async"
+  type="danger"
+  (closed)="closeErrorAlert()"
+>
+  Transaction Error - {{ transactionMessage$ | async }}</ngb-alert
+>

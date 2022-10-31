@@ -10,19 +10,21 @@ import { getUserWalletAddress } from 'src/app/store/selectors/app.selectors';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
   currentUserWallet$: Observable<string>
-  ethEventSubscriptions: Subscription[] = []
-
+  
   constructor(private store: Store<AppInfoState>, private modalService: NgbModal,
     private walletService: WalletService,
-  ) {
-    this.currentUserWallet$ = this.store.pipe(select(getUserWalletAddress))
-
-  }
-
+    ) {
+      this.currentUserWallet$ = this.store.pipe(select(getUserWalletAddress))
+      
+    }
+    
+  ethEventSubscriptions: Subscription[] = []
+  
   ngOnInit(): void {
     this.ethEventSubscriptions.push(this.walletService.getEthereumProvider().subscribe(
       ethereum => ethereum.on('accountsChanged', (wallets: any) => {

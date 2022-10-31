@@ -17,13 +17,13 @@ export const updateUserWallet = createAction(
     props<{ wallet: string }>()
 )
 
-export const sendSetTextTransaction = createAction(
+export const setContractText = createAction(
     '[Metamask Info] - Send Transaction to store text',
     props<{ textToStore: string }>()
 
 )
 
-export const sendGetTextTransaction = createAction(
+export const getContractText = createAction(
     '[Metamask Info] - Send Transaction to view the text stored in contract'
 )
 

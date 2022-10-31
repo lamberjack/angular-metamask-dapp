@@ -4,7 +4,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from "@ngrx/store";
 import { catchError, map, of, switchMap, tap, withLatestFrom } from "rxjs";
 import { WalletService } from "src/app/services/wallet.service";
-import { retrieveUserWallet, updateUserWallet, userWalletDisconnect, userWalletDisconnected, sendSetTextTransaction, transactionSendError, sendGetTextTransaction, updateActualText, transactionSetTextSuccess } from "../actions/app.action";
+import { retrieveUserWallet, updateUserWallet, userWalletDisconnect, userWalletDisconnected, setContractText, transactionSendError, getContractText, updateActualText, transactionSetTextSuccess } from "../actions/app.action";
 import { AppInfoState } from "../reducers/app.reducer";
 import { getTextToStore, getUserWalletAddress } from "../selectors/app.selectors";
 
@@ -46,7 +46,7 @@ export class AppInfoEffects {
 
     sendSetTextTransactionEffect$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(sendSetTextTransaction),
+            ofType(setContractText),
             tap(() => console.log('[AppInfoEffect] Sending Set Text transaction')),
             withLatestFrom(this.store.select(getUserWalletAddress), this.store.select(getTextToStore)),
             switchMap(([_, userAddress, textToStore]) => this.walletService.sendSetTextTransaction(userAddress, textToStore).pipe(
@@ -64,7 +64,7 @@ export class AppInfoEffects {
 
     sendGetTextTransactionEffect$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(sendGetTextTransaction),
+            ofType(getContractText),
             tap(() => console.log('[AppInfoEffect] Read Text Data From Contract')),
             switchMap(() => this.walletService.sendGetTextTransaction().pipe(
                 map(res => {
@@ -82,7 +82,7 @@ export class AppInfoEffects {
         this.actions$.pipe(
             ofType(transactionSetTextSuccess),
             tap(() => console.log('[AppInfoEffect] Refresh Actual Value From Text Contract')),
-            switchMap(() => of(sendGetTextTransaction()))
+            switchMap(() => of(getContractText()))
         ))
 
     constructor(private actions$: Actions, private walletService: WalletService,

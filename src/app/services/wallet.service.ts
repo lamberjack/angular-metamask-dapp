@@ -48,11 +48,13 @@ export class WalletService {
             NAME_CONTRACT_ADDRESS);
           // use the metod call() that doesn't alter the state of the smart contract (getName is a pure function)
           // and doesn't need to send a transaction on blockchain 
-          return from(NameContract.methods.getName().call().then((result: string) => {
-            console.log("result of get NAME: ",result)
-            return result
-          }))
+          return from(NameContract.methods.getName().call().then((result: string) => result ))
         }))
       }
+
+  
+
+
+
 
 }

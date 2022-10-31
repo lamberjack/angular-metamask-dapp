@@ -17,6 +17,9 @@ import { AppInfoEffects } from './store/effects/app.effects';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ViewSectionComponent } from './components/dashboard/view-section/view-section.component';
+import { DynamicInfoSectionComponent } from './components/dashboard/dynamic-info-section/dynamic-info-section.component';
+import { EditSectionComponent } from './components/dashboard/edit-section/edit-section.component';
 
 
 @NgModule({
@@ -28,6 +31,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     NavbarComponent,
     NotAuthorizedComponent,
     LoaderComponent,
+    ViewSectionComponent,
+    DynamicInfoSectionComponent,
+    EditSectionComponent,
   ],
   imports: [
     BrowserModule,

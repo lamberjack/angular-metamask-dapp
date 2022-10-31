@@ -2,7 +2,7 @@
     <div class="col-md">
         <button type="button" class="btn btn-secondary btn-lg w-100" (click)="open(demoModal)"
             *ngIf="!(currentUserWallet$ | async)">Connect Wallet</button>
-        <button class="btn btn-secondary btn-secondary button-connected btn-lg w-100" *ngIf="currentUserWallet$ | async">
+        <button class="button-connected btn btn-secondary btn-lg w-100" *ngIf="currentUserWallet$ | async">
             {{ currentUserWallet$ | async | slice:0:5 }}...{{ currentUserWallet$ | async | slice:37:42 }}</button>
     </div>
 </div>
